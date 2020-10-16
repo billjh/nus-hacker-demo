@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nus-hacker-demo
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: nus-hacker-demo
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: nus-hacker-demo:v2
+        image: nus-hacker-demo:v1
         ports:
         - containerPort: 8080
