@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nus-hacker-demo
+  namespace: nus-hacker
+  labels:
+    app: nus-hacker-demo
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nus-hacker-demo
+  template:
+    metadata:
+      labels:
+        app: nus-hacker-demo
+    spec:
+      containers:
+      - name: app
+        image: nus-hacker-demo:v2
+        ports:
+        - containerPort: 8080
